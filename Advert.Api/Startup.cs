@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Advert.Api.Services;
+using Advert.Api.HealthChecks;
 
 namespace Advert.Api
 {
@@ -29,6 +30,11 @@ namespace Advert.Api
             services.AddAutoMapper();
             services.AddTransient<IAdvertStorageService, DynamoDBAdvertStorage>();
             services.AddControllers();
+            services.AddHealthChecks();
+            //services.AddHealthChecks(checks =>
+            //{
+            //    checks.AddCheck<StorageHealthCheck>("Storage", new System.TimeSpan(0, 1, 0));
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +48,7 @@ namespace Advert.Api
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseHealthChecks("/health");
 
             app.UseEndpoints(endpoints =>
             {

@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Authors>Alex Deyto</Authors>
+    <Company>None</Company>
+    <Product>Web Advert Microservices</Product>
+    <PackageProjectUrl>https://github.com/AlbrenDeyto/WebAdvert.AdvertApi</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AlbrenDeyto/WebAdvert.AdvertApi</RepositoryUrl>
+    <PackageId>AdvertApi.Models1</PackageId>
   </PropertyGroup>
 
 </Project>
